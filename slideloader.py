@@ -30,6 +30,10 @@ def device_event(observer, device):
 		    os.system('umount ' + usb_folder + drive_name) #unmount the drive
 	    
 	    print 'Starting feh'
+	    #feh arguments: -Y, hide cursor; -x, borderless window; -q, quiet mode (don't report errors); 
+			   #-D, duration in seconds to display each image; -B background colour; -F fullscreen;
+			   #-Z, zoom pictures to fill a dimension of the screen; -z, randomise image order; 
+			   #-r, recursive (look in the entire directory tree beyond the selected folder)
             process = subprocess.Popen('feh -Y -x -q -D 5 -B black -F -Z -z -r ' + image_folder, shell=True) #start feh slideshow from new images
             
 file_formats = ('.jpg', '.jpeg', '.png', '.gif', '.tiff', '.bmp') #Most of the file formats accepted by feh
